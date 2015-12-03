@@ -1,0 +1,21 @@
+<ion-view view-title="Welcome" class="welcome-view" can-swipe-back="false">
+    <div class="row responsive-sm welcome-view-content-holder">
+        <div class="welcome-logo">
+            <img src="../img/arrow@1x.png" alt="logo image" id="image-logo" />
+        </div>
+        <div class="login-block">
+            <input type="text" value="" placeholder="Username" id="login-username" class="normalize" ng-model="account.username" />
+            <input type="password" value="" placeholder="Password" id="login-password" class="normalize" ng-model="account.password" />
+ 
+            <div class="submit-button">
+                <button ion-track-tap="Sign In" ion-track-data="{ type: sign-in }" class="clouds-flat-button button-block welcome-btn" ng-click="login()">SIGN IN</button>
+            </div>
+            <div class="text-button">
+                <button ion-track-tap="Sign Up" ion-track-data="{ type: sign-up }" class="clouds-flat-button button-block welcome-btn" ui-sref="sign-up">DON’T HAVE AN ACCOUNT? <div class="emphasize">SIGN UP</div></button>
+            </div>
+            
+        </div>
+            <!-- <button ion-track-tap="Sign UP" ion-track-data="{ type: sign-up }" class="clouds-flat-button button-block" ui-sref="sign-up">Sign Up</button>
+            -->
+    </div>
+</ion-view>

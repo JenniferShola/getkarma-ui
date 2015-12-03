@@ -1,0 +1,10 @@
+{
+  "name": "karma-ui",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/accounts",
+      "proxyUrl": "http://getkarma.heroku.com/accounts"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+.add-header-content {
+	background-image: url(../img/mint-gradient.png);
+	height: 180px;
+	width: 100%;
+	display: block;
+}
+
+.add-header-content-padding-i {
+	padding-top: 10%;
+}
+
+.add-header-content-padding-c {
+	padding-top: 10%;
+}
+
+.scaling-height-left {
+	padding-left: 5%;
+	height: 100%;
+	width: 30%;
+	float: left;
+}
+
+.interaction-photo {
+	margin-top: 5%;
+	width: 70px;
+	height: 70px;
+
+	align: left;
+	float: left;
+	
+}
+
+#interaction-profile-pic {
+	border-radius: 100px;
+ 	-webkit-border-radius: 100px;
+ 	-moz-border-radius: 100px;
+}
+
+.add-interaction-main-profile-detail {
+	padding-right: 5%;
+}
+
+.add-interaction-main-profile-detail h2 {
+	font-size: 18px;
+}
+
+.add-interaction-main-profile-detail p {
+	font-size: 12px;
+	line-height: 125%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+  	-webkit-line-clamp: 4;
+  	-webkit-box-orient: vertical; 
+}
+
+.connection-photo {
+	width: 90px;
+	height: 90px;
+	align: left;
+	display: block;
+	margin: auto;
+}
+
+#connection-profile-pic {
+	border-radius: 100px;
+ 	-webkit-border-radius: 100px;
+ 	-moz-border-radius: 100px;
+}
+
+.add-connection-main-profile-detail {
+	padding-right: 5%;
+	display: block;
+	margin: auto;
+
+}
+
+.add-connection-main-profile-detail h2 {
+	font-size: 18px;
+}
+
+.add-connection-main-profile-detail p {
+	font-size: 12px;
+	white-space: pre;
+	padding: 0;
+	margin: 0;
+}
+
+.highlight-subnav-line {
+	position: absolute;
+}
+
+.subnav-add-button {
+	letter-spacing: 1px;
+}
+
+.add-button-header {
+	width: 120px;
+	height: 60px;
+	padding: 0;
+	align: left;
+	float: left;
+}
+
+.second-button-header {
+	margin-left: 5%;
+}
+
+.platform-ios input[type="datetime-local"], 
+.platform-ios input[type="date"], 
+.platform-ios input[type="month"], 
+.platform-ios input[type="time"],
+.platform-ios input[type="week"],
+.platform-ios input[type="text"], 
+.platform-android input[type="datetime-local"], 
+.platform-android input[type="date"], 
+.platform-android input[type="month"], 
+.platform-android input[type="time"], 
+.platform-android input[type="week"], 
+.platform-android input[type="text"]
+{
+	text-align: -webkit-right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

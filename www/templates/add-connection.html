@@ -1,0 +1,93 @@
+
+<ion-view view-title="Add Connection" class="add-connection-view" can-swipe-back="false">
+    <div class="row responsive-sm home-view-content-holder">
+
+        <ion-header-bar class="clear">
+            <button class="button button-icon icon ion-ios-close-empty" ng-click="closeAddConnectionModule()" ></button>
+            <button class="button button-icon icon ion-ios-checkmark-empty"></button>
+        </ion-header-bar>
+        
+        <ion-content class="has-header" scroll="true" direction="y" >   
+
+            <div class="add-header-content add-header-content-padding-c centered">
+                <div class="connection-photo profile-photo centered">
+                    <img src="../img/sample-profile-photo@1x.png" alt="contact image" id="connection-profile-pic" class="back-profile-pic"/>
+                    <img src="../img/minus-sign@2x.png" alt="add image" id="connection-add-profile-pic" class="front-profile-add" />
+                </div>
+                <div class="add-connection-main-profile-detail">
+                    <p class="centered">Met March 9, 2015</p>
+                    <p class="centered">Introduced by <span class="detail-emphasis">Diane Leland</span> at GHC Mixer</p>
+                </div>
+            </div>
+
+            <div class="centered sub-navbar-headers">
+                <div class="add-button-header">
+                    <button class="button button-clear subnav-add-button">INTERACTION</button>
+                </div>
+
+                <div class="add-button-header second-button-header">
+                    <button class="button button-clear subnav-add-button">CONNECTION</button>
+                    <img src="../img/line.png" alt="selected line image" class="highlight-subnav-line"/>
+                </div>
+            </div>
+
+
+            <div class="sub-content-detail ">
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">NAME</span>
+                        <input type="text" ng-model="user.name" placeholder="Janethe Conthe">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">PROFESSION</span>
+                        <input type="text" ng-model="user.profession" placeholder="UI / UX Designer">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input item-select sub-detail">
+                        <div class="input-label">LOCATION</div>
+                        <select>
+                            <option selected>Gold</option>
+                            <option >Silver</option>
+                            <option>Bronze</option>
+                        </select>
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">EMAIL</span>
+                        <input type="email" ng-model="user.email" placeholder="janeth@karmaapp.io">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">PHONE NUMBER</span>
+                        <input type="tel" ng-model="user.username" placeholder="6501234567">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">HANDLE</span>
+                        <input type="text" placeholder="@janethc">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div> 
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">TAGS</span>
+                        <input type="text" placeholder="GHC">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>         
+            </div>
+        </ion-content>
+
+    </div>
+</ion-view>

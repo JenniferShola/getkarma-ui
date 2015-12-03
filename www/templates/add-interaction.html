@@ -1,0 +1,85 @@
+<ion-view view-title="Add Interaction" class="add-interaction-view" can-swipe-back="false">
+    <div class="row responsive-sm home-view-content-holder">
+
+        <ion-header-bar class="clear">
+            <button class="button button-icon icon ion-ios-close-empty" ng-click="closeAddInteractionModule()"></button>
+            <button class="button button-icon icon ion-ios-checkmark-empty"></button>
+        </ion-header-bar>
+
+        <ion-content class="has-header" scroll="true" direction="y" >
+
+            <div class="add-header-content add-header-content-padding-i">
+                <div class="scaling-height-left"> 
+                    <div class="interaction-photo profile-photo">
+                        <img src="../img/sample-profile-photo@1x.png" alt="contact image" id="interaction-profile-pic" class="back-profile-pic"/>
+                        <img src="../img/add-sign@1x.png" alt="add image" id="interaction-add-profile-pic" class="front-profile-add" />
+                    </div>
+                </div>
+                <div class="add-interaction-main-profile-detail">
+                    <h2>Follow Up With Janeth</h2>
+                    <p class="">Enter description here. The text here should describe what you plan on discussing during the interaction. Filling out this section helps for future searches.</p>
+                </div>
+            </div>
+
+            <div class="sub-navbar-headers centered">
+                <div class="add-button-header">
+                    <button class="button button-clear subnav-add-button">INTERACTION</button>
+                    <img src="../img/line.png" alt="selected line image" class="highlight-subnav-line"/>
+                </div>
+
+                <div class="add-button-header second-button-header">
+                    <button class="button button-clear subnav-add-button">CONNECTION</button>
+                </div>
+            </div>
+
+
+            <div class="sub-content-detail ">
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">DATE</span>
+                        <input type="date">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input item-select sub-detail">
+                        <div class="input-label">LOCATION</div>
+                        <select>
+                            <option selected>20 Minutes</option>
+                            <option >1 Day</option>
+                            <option>2 Day</option>
+                        </select>
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input item-select sub-detail">
+                        <div class="input-label">ACTION</div>
+                        <select>
+                            <option selected>Email</option>
+                            <option >Tweet</option>
+                            <option >Text</option>
+                            <option>Call</option>
+                        </select>
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">TAGS</span>
+                        <input type="text" placeholder="GHC">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">NOTES</span>
+                        <input type="text" placeholder="Some notes here...">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>            
+            </div>
+        </ion-content>
+
+    </div>
+</ion-view>

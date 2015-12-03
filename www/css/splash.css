@@ -1,0 +1,109 @@
+.splash-home {
+	background-image: url(../img/splash-image.png); 
+	height: 100%; 
+	width: 100%;
+	position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    padding-top: 10px;
+}
+
+.splash-welcome {
+	color: #fff;
+	font-size: 24px;
+	letter-spacing: 1px;
+	
+	margin: 40px 0px;
+	
+	display: flex;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-home-content {
+	width: 100%;
+}
+
+.splash-home-header {
+	width: 100%;
+	display: flex;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-date {
+	width: 100px;
+	height: 100px;
+	
+	position:relative;
+}
+
+#splash-date-oval {
+	width: 95%;
+	height: 95%;
+
+	border-radius: 100px;
+ 	-webkit-border-radius: 100px;
+ 	-moz-border-radius: 100px;
+
+ 	position:absolute; 
+ 	z-index: 0;
+}
+
+#splash-notifications {
+	width: 25%;
+	height: 25%;
+
+	position:absolute; 
+ 	left:70%; 
+ 	z-index:1;
+}
+
+#splash-date-number {
+	color: #fff;
+	font-size: 50px;
+	margin: 33% 16%;
+
+ 	position:absolute; 
+ 	z-index: 3;
+}
+
+
+#splash-date-day {
+	color: #fff;
+	font-size: 10px;
+	margin-top: 65%;
+	margin-left: 35%;
+
+ 	position:absolute; 
+ 	z-index: 3;
+}
+
+.splash-inspiration {
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	
+	margin: 40% 5%;
+	
+	display: flex;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}

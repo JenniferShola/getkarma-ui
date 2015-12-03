@@ -1,0 +1,52 @@
+<ion-view view-title="Sign Up" class="signup-view" can-swipe-back="false">
+    <div class="row responsive-sm signup-view-content-holder">
+
+        <ion-header-bar class="clear">
+            <button class="button button-icon icon ion-ios-arrow-left" ui-sref="welcome"></button>
+        </ion-header-bar>
+        
+        <ion-content scroll="false">          
+            <div class="navbar-spacing"></div>
+            <div class="signup-header-content">
+                <div class="profile-photo signup-photo">
+                    <img src="../img/sample-profile-photo@1x.png" alt="profile image" id="signup-profile-pic" class="back-profile-pic" />
+                    <img src="../img/add-sign@1x.png" alt="add image" id="signup-add-profile-pic" class="front-profile-add" />
+                </div>
+            </div>
+            
+            <div class="signup-block">
+                <div class="signup-name-field">
+                    <img src="../img/name.png" alt="name image" class="signup-field-img" />
+                        <div class="emphasize field-header-text">NAME</div>
+                        <input type="text" class="normalize" value="" placeholder="Enter name" id="username" ng-model="data.username"/>
+                </div>
+
+                <div class="signup-email-field">
+                    <img src="../img/email.png" alt="email image" class="signup-field-img" id="signup-field-img-email"/>
+                        <div class="emphasize field-header-text">EMAIL</div>
+                        <input type="text" class="normalize" value="" placeholder="Enter email" id="email"  ng-model="data.email"/>
+                </div>
+
+                <div class="signup-password-field">
+                    <img src="../img/password.png" alt="password image" class="signup-field-img" id="signup-field-img-password"/>
+                        <div class="emphasize field-header-text">PASSWORD</div>
+                        <input type="text" class="normalize" value="" placeholder="Enter password" id="password"  ng-model="data.password"/>
+                </div>
+
+                <div class="signup-phone-field">
+                    <img src="../img/phone@1x.png" alt="phone image" class="signup-field-img" id="signup-field-img-phone"/>
+                        <div class="emphasize field-header-text">PASSWORD</div>
+                        <input type="text" class="normalize" value="" placeholder="Enter phone number" id="phone"  ng-model="data.phone"/>
+                </div>
+
+                <div class="container">
+                    <div class="content">
+                        <div class="submit-button">
+                            <button ion-track-tap="Sign In" ion-track-data="{ type: sign-in }" class="clouds-flat-button button-block welcome-btn" ui-sref="sign-in">CREATE</button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </ion-content>
+    </div>
+</ion-view>

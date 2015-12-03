@@ -1,0 +1,94 @@
+.main-connection-photo {
+	align: left;
+	display: block;
+	margin: 10px 5px;
+}
+
+#main-profile-pic {
+	width: 105px;
+	height: 105px;
+	border-radius: 100px;
+ 	-webkit-border-radius: 100px;
+ 	-moz-border-radius: 100px;
+}
+
+#full-connection-meter {
+	position: absolute;
+    z-index: 0;
+}
+
+#strength-connection-meter {
+	z-index: 1;
+	padding-top: 43px;
+}
+
+.profile-header-content {
+	margin-top: 10px;
+}
+
+.main-contact-content-detail {
+	display: block;
+	width: 90%;
+	margin: auto;
+}
+
+.connection-strength {
+	margin-right: 10px;
+    margin-left: 5px;
+}
+
+.main-profile-detail h1 {
+	font-size: 22px;
+	font-weight: normal;
+	line-height: 22px;
+	margin-bottom: 7px;
+}
+
+.minor-profile-detail p {
+	font-size: 13px;
+	line-height: 13px;
+	letter-spacing: normal;
+	margin-bottom: 5px;
+}
+
+.line-item-icons {
+	height: 14px;
+    width: 16px;
+    clear: right;
+    float: left;
+}
+
+.line-item-icon-detail {
+	width: 20px;
+    height: 50px;
+    float: left;
+    margin: 3px 10px 0px 0px;
+}
+
+.contact-content-detail p {
+	margin-left: 4%;
+}
+
+.contact-line-item {
+	margin: 0 5%;
+}
+
+.contact-line-item-detail {
+	width: 100%;
+}
+
+.contact-line-item-detail h1 {
+	font-size: 15.5px;
+	margin-bottom: 2px;
+} 
+
+.contact-line-item-detail p {
+	font-size: 13px;
+	color: gray;
+	line-height: 115%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}

@@ -1,0 +1,142 @@
+/* Empty. Add your own CSS if you like */
+html *
+{
+   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+
+.emphasize {
+	color: #000000;
+	display: inline;
+	letter-spacing: 1px;
+}
+
+.detail-emphasis {
+	color: #7A4540 ;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.field-header-text {
+	float: left;
+	font-size: 12px;
+	margin-left: 1em;
+}
+
+.centered {
+	display: flex;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar customizations. */
+.navbar-spacing {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.navbar {
+	height: 40px;
+	width: 100%
+	display: flex;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-icon-left {
+	height: 50%;
+	width: 20px;
+	float: left;
+	margin-top: 2px;
+	margin-left: 10px;
+	display: inline;
+}
+
+.navbar-icon-right {
+	height: 50%;
+	width: 20px;
+	float: left;
+	display: inline;
+}
+
+.navbar-center-text {
+	margin: 0px 30% 0px 20%;
+}
+
+.navbar-empty-center-text {
+	margin: 0px 20% 0px 50%;
+}
+
+/* Overlapping profile add photo customizations. */
+.profile-photo {
+	position:relative;
+}
+
+.back-profile-pic {
+	width: 95%;
+	height: 95%;
+
+ 	position:absolute; 
+ 	z-index: 0;
+}
+
+.front-profile-add {
+	width: 25%;
+	height: 25%;
+
+	position:absolute; 
+ 	left:70%; 
+ 	z-index:1;
+}
+
+
+.sub-detail {
+	width: 100%;
+	border: none;
+}
+
+.subcontent-detail-line {
+	margin-left: 5%;
+	width: 90%;
+}
+
+
+.scrollable {
+	height: 5000px;
+}
+
+
+i.icon.ion-clipboard,
+i.icon.ion-ios-people,
+i.icon.ion-ios-lightbulb-outline,
+i.icon.ion-stats-bars,
+i.icon.ion-ios-more-outline
+{
+	font-size: 26px;
+    margin-top: 6px;
+}
+
+input.normalize {
+    text-align: inherit !important;
+}
+
+
+
+
+
+
+

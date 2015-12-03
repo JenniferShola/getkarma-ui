@@ -1,0 +1,62 @@
+
+.signup-header-content {
+	width: 100%;
+	margin-bottom: 15px;
+
+	display: flex;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-photo {
+	width: 100px;
+	height: 100px;
+}
+
+#signup-profile-pic {
+	border-radius: 100px;
+ 	-webkit-border-radius: 100px;
+ 	-moz-border-radius: 100px;
+}
+
+.signup-block {
+	margin: 0 5%;
+}
+
+.signup-block input {
+    width: 100%;
+    height: 12px;
+    color: #86868B;
+    border-bottom: 1px solid #5D5E5E;
+    margin-bottom: 1em;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 1em 0em 1.75em 2.7em;
+}
+
+.signup-field-img {
+	width: 7%;
+	height: 7%;
+	float: left;
+}
+
+#signup-field-img-email {
+	width: 6%;
+	margin: 2px 1px 0 1px;
+}
+
+#signup-field-img-password {
+	width: 5%;
+	margin: 0 3px;
+}
+
+#signup-field-img-phone{
+	width: 4%;
+	margin: 0 5px;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="301px" height="234px" viewBox="0 0 301 234" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15588) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="14.1690625%" y1="13.9541778%" x2="85.3553414%" y2="86.0482582%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="44.6528537" y="84.4397748" width="56.6246653" height="150.198797" rx="4"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Login" sketch:type="MSArtboardGroup" transform="translate(-226.000000, -245.000000)">
+            <g id="arrow" sketch:type="MSLayerGroup" transform="translate(225.000000, 246.000000)">
+                <g id="shape">
+                    <use fill="#50D2C2" sketch:type="MSShapeGroup" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                </g>
+                <path d="M300.437731,40.5269859 C301.999169,38.9655479 302.000526,36.4353137 300.433499,34.8682867 L266.056745,0.491533094 C264.49297,-1.07224217 261.956581,-1.07123418 260.398046,0.487301098 L66.5708903,194.314457 L103.77911,231.522676 C105.342885,233.086451 107.879273,233.085443 109.437809,231.526908 L300.437731,40.5269859 Z" id="shape" fill="#50D2C2" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

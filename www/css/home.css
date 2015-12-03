@@ -1,0 +1,56 @@
+.home-header-content {
+	background-image: url(../img/trans-image.png); 
+	height: 150px; 
+	width: 100%;
+	position: absolute;
+    top: 0; right: 0; left: 0;
+}
+
+.home-task-list {
+	top: 150px; 
+	position: absolute;
+	width: 100%;
+}
+
+.colored-task {
+	float: left;
+	height: 50px;
+	width: 2px;
+	display: inline-block;
+	background-color: yellow;
+}
+
+.item-avatar {
+	width: 100%;
+	padding-left: 0;
+}
+
+.item-avatar img {
+	float: left;
+	height: 50px;
+	margin-left: 5%;
+	border-radius: 25px;
+	display: inline-block;
+}
+
+.item-avatar h2 {
+	margin-left: 30%;
+	padding-top: 5px;
+	clear: right;
+	white-space: nowrap;
+}
+
+
+.item-avatar p.detail-date {
+	margin-left: 7%;
+	width: 40px;
+	float: left;
+	font-size: 10px;
+}
+
+.item-avatar p.detail-project {
+	margin-left: 7%;
+	width: 80px;
+	float: left;
+	font-size: 10px;
+}

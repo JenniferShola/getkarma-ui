@@ -21,6 +21,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
   });
 })
 
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -112,6 +113,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
   .state('add-connection', {
     url: '/add/connection',
     templateUrl: 'templates/add-connection.html',
+    controller: 'mainCtrl',
+    data: {
+      requiredLogin: false
+    }
+  })
+
+  .state('profile', {
+    url: '/profile',
+    templateUrl: 'templates/profile.html',
     controller: 'mainCtrl',
     data: {
       requiredLogin: false

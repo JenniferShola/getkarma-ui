@@ -142,7 +142,9 @@ input.normalize {
     text-align: inherit !important;
 }
 
-
+.main-tab-icons.tab-item.tab-item-active {
+    color: #6565A2;
+}
 
 
 

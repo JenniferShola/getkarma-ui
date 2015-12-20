@@ -81,6 +81,10 @@ html *
 	margin: 0px 20% 0px 50%;
 }
 
+.button.button-icon.icon.ion-ios-search.pull-right {
+    padding-right: 32px;
+}
+
 /* Overlapping profile add photo customizations. */
 .profile-photo {
 	position:relative;
@@ -117,6 +121,10 @@ html *
 
 .scrollable {
 	height: 5000px;
+}
+
+.row.responsive-sm.welcome-view-content-holder {
+	height: 100%;
 }
 
 

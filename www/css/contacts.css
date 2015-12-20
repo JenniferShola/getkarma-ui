@@ -30,4 +30,5 @@ img.contacts-strength-meter {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     width: 65%;
+    font-weight: normal;
 }

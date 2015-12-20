@@ -94,6 +94,10 @@ angular.module('app.controllers', ['ionic'])
     $scope.connectionModule.hide();
   };
 
+  $scope.back = function() {
+    window.history.back();
+  };
+
 })
 
 .controller('DashCtrl', function($scope) {})

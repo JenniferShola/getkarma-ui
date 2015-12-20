@@ -1,0 +1,37 @@
+.item-settings-card.item-avatard {
+    display: block;
+    padding-top: 10px !important;
+    height: 100%;
+}
+
+.item-settings-details {
+    float: left;
+    display: block;
+    margin-left: 5%;
+}
+
+.item-settings-details h4 {
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.item-settings-details p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    color: #86868B;
+}
+
+.settings-header-line {
+	width: 100%;
+}
+
+.item-toggle {
+    margin: 15px 0px 15px 30px;
+}

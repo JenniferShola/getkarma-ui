@@ -1,3 +1,8 @@
+a.item.item-avatar {
+    padding: 11px;
+    max-height: 22px;
+}
+
 .home-header-content {
 	background-image: url(../img/trans-image.png); 
 	height: 150px; 
@@ -20,12 +25,12 @@
 	background-color: yellow;
 }
 
-.item-avatar {
+.item-avatard {
 	width: 100%;
-	padding-left: 0;
+	padding-left: 10px;
 }
 
-.item-avatar img {
+.item-avatard img {
 	float: left;
 	height: 50px;
 	margin-left: 5%;
@@ -33,22 +38,25 @@
 	display: inline-block;
 }
 
-.item-avatar h2 {
-	margin-left: 30%;
+.item-avatard h2 {
 	padding-top: 5px;
 	clear: right;
 	white-space: nowrap;
 }
 
+.item-home-details {
+    margin-left: 5%;
+    display: block;
+    float: left;
+}
 
-.item-avatar p.detail-date {
-	margin-left: 7%;
+.item-avatard p.detail-date {
 	width: 40px;
 	float: left;
 	font-size: 10px;
 }
 
-.item-avatar p.detail-project {
+.item-avatard p.detail-project {
 	margin-left: 7%;
 	width: 80px;
 	float: left;

@@ -18,6 +18,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    
   });
 })
 
@@ -78,7 +79,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
     url: '/moments',
     views: {
       'tab3': {
-        templateUrl: 'templates/profile.html',
+        templateUrl: 'templates/moments.html',
         controller: 'mainCtrl'
       }
     }
@@ -88,7 +89,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
     url: '/trends',
     views: {
       'tab4': {
-        templateUrl: 'templates/welcome.html'
+        templateUrl: 'templates/trends.html'
       }
     }
   })
@@ -97,7 +98,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
     url: '/settings',
     views: {
       'tab5': {
-        templateUrl: 'templates/welcome.html'
+        templateUrl: 'templates/settings.html'
       }
     }
   })

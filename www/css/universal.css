@@ -147,6 +147,9 @@ input.normalize {
 }
 
 
-
+.toggle input:checked + .track {
+    border-color: #4cd964 !important;
+    background-color: #4cd964 !important;
+}
 
 

@@ -2,8 +2,8 @@ angular.module('app.controllers', ['ionic'])
 
 .controller('mainCtrl', function($scope, $ionicModal, LoginService, User, Account, $ionicPopup, $state, $stateParams) {
 
-  /* Users Controller. */
-/*  $scope.users = User.query();
+  /* Users API. */
+  $scope.users = User.query();
 
   $scope.deleteUser = function(user) {
     if (popupService.showPopup('Really delete this?')) {
@@ -27,7 +27,7 @@ angular.module('app.controllers', ['ionic'])
       $state.go('tabs.home'); // on success go back to home i.e. movies state.
     });
   };
-*/
+
 
   /* Login Controller. */
   $scope.login = function() {

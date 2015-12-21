@@ -1,21 +1,58 @@
 angular.module('app.controllers', ['ionic'])
 
-.controller('mainCtrl', function($scope, $ionicModal, LoginService, User, Account, $ionicPopup, $state, $stateParams) {
+.controller('mainCtrl', function($scope, $ionicModal, LoginService, User, Account, $ionicPopup, $state, $stateParams, $http) {
+  var url_domain = 'http://localhost:3000/';
 
   /* Users API. */
   $scope.users = User.query();
 
-  $scope.deleteUser = function(user) {
+  $scope.deleteUser = function() {
+  	console.log("Trying to delete");
+  	var url_id = url_domain +'users/test11';
+  	$http({
+	  method: 'DELETE',
+	  url: 'http://localhost:3000/users/test11',
+	  headers: {
+	  	'safedelete': 'yes'
+	  }
+	}).then(function successCallback(response) {
+		console.log("Got a successful response");
+	    // this callback will be called asynchronously
+	    // when the response is available
+	}, function errorCallback(response) {
+		console.log(" :-( ");
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	});
+
+
+
+/*
     if (popupService.showPopup('Really delete this?')) {
       user.$delete(function() {
         $window.location.href = ''; //redirect to home
       });
     }
+*/
+
   };
+
+  /*
 
   $scope.user = User.get({ iuser: $stateParams.username });
 
   $scope.addUser = function() { //create a new movie. Issues a POST to /api/movies
+  	$http({
+	  method: 'POST',
+	  url: url_domain;
+	}).then(function successCallback(response) {
+	    // this callback will be called asynchronously
+	    // when the response is available
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+
     $scope.user = new User();
     $scope.user.$save(function() {
       $state.go('tabs.home'); // on success go back to home i.e. movies state.

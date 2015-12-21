@@ -4,7 +4,7 @@
 
         <ion-header-bar class="clear">
             <button class="button button-icon icon ion-ios-close-empty" ng-click="closeAddConnectionModule()" ></button>
-            <button class="button button-icon icon ion-ios-checkmark-empty"></button>
+            <button class="button button-icon icon ion-ios-checkmark-empty" ng-click="addUser(user)"></button>
         </ion-header-bar>
         
         <ion-content class="has-header" scroll="true" direction="y" >   
@@ -49,8 +49,8 @@
                 </div>
                 <div class="content-detail">
                     <label class="item item-input item-select sub-detail">
-                        <div class="input-label">LOCATION</div>
-                        <select>
+                        <div class="input-label">CONTACT TYPE</div>
+                        <select ng-model="user.contact_type">
                             <option selected>Gold</option>
                             <option >Silver</option>
                             <option>Bronze</option>
@@ -68,14 +68,14 @@
                 <div class="content-detail">
                     <label class="item item-input sub-detail">
                         <span class="input-label">PHONE NUMBER</span>
-                        <input type="tel" ng-model="user.username" placeholder="6501234567">
+                        <input type="tel" ng-model="user.phone_number" placeholder="6501234567">
                     </label>
                     <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
                 </div>
                 <div class="content-detail">
                     <label class="item item-input sub-detail">
                         <span class="input-label">HANDLE</span>
-                        <input type="text" placeholder="@janethc">
+                        <input type="text" placeholder="@janethc" ng-model="user.username">
                     </label>
                     <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
                 </div> 
@@ -90,4 +90,5 @@
         </ion-content>
 
     </div>
+    <pre>user = {{user | json}}</pre>
 </ion-view>

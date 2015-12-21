@@ -2,42 +2,71 @@ angular.module('app.controllers', ['ionic'])
 
 .controller('mainCtrl', function($scope, $ionicModal, LoginService, User, Account, $ionicPopup, $state, $stateParams, $http) {
   var url_domain = 'http://localhost:3000/';
+  var users_path = 'users';
+  var back_slash = '/';
 
   /* Users API. */
   $scope.users = User.query();
 
-  $scope.deleteUser = function() {
-  	console.log("Trying to delete");
-  	var url_id = url_domain +'users/test11';
+  $scope.deleteUser = function(user) {
+  	console.log("Trying to delete " + user);
+  	var url_id = url_domain + users_path + back_slash + user;
+
   	$http({
-	  method: 'DELETE',
-	  url: 'http://localhost:3000/users/test11',
-	  headers: {
-	  	'safedelete': 'yes'
-	  }
-	}).then(function successCallback(response) {
-		console.log("Got a successful response");
-	    // this callback will be called asynchronously
-	    // when the response is available
-	}, function errorCallback(response) {
-		console.log(" :-( ");
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	});
+  	  method: 'DELETE',
+  	  url: url_id,
+  	  headers: {
+  	  	'safedelete': 'yes'
+  	  }
+  	}).then(function successCallback(response) {
+  		console.log("Got a successful response");
+  	    // this callback will be called asynchronously
+  	    // when the response is available
+  	}, function errorCallback(response) {
+  		console.log(" :-( ");
+  	    // called asynchronously if an error occurs
+  	    // or server returns response with an error status.
+  	});
 
-
+  };
 
 /*
+  $scope.addUser = function(user) {
+    console.log("Trying to add " + user);
+    console.log("Can I see a name " + name + $scope.name);
+    var url_id = url_domain + users_path;
+
+    $http({
+    method: 'POST',
+    url: url_id,
+    headers: {
+      'username': user.username,
+      'name': user.name,
+      'contact_type': user.contact_type
+    }
+  }).then(function successCallback(response) {
+    console.log("Got a successful response");
+    $scope.connectionModule.hide();
+      // this callback will be called asynchronously
+      // when the response is available
+  }, function errorCallback(response) {
+    console.log(" :-( ");
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+  });
+
+
+
     if (popupService.showPopup('Really delete this?')) {
       user.$delete(function() {
         $window.location.href = ''; //redirect to home
       });
     }
-*/
+
 
   };
 
-  /*
+  
 
   $scope.user = User.get({ iuser: $stateParams.username });
 

@@ -1,30 +1,63 @@
 angular.module('app.controllers', ['ionic'])
 
-.controller('mainCtrl', function($scope, $ionicModal, LoginService, User, Account, $ionicPopup, $state, $stateParams, $http) {
+.controller('mainCtrl', function($scope, $q, $ionicModal, LoginService, User, Account, $ionicPopup, $state, $stateParams, $http) {
   var url_domain = 'http://localhost:3000/';
   var users_path = 'users';
   var back_slash = '/';
-
   
-  $scope.deleteUser = function(user) {
-  	console.log("Trying to delete " + user);
-  	var url_id = url_domain + users_path + back_slash + user;
+  $scope.users = [];
 
+   $scope.getUsers = function() {
+    var url_id = url_domain + users_path;
+    var deferred = $q.defer();
+
+    console.log("Trying to get users. ");
+    
+    $http({
+      method: 'GET',
+      url: url_id
+    }).then(function successCallback(response) {
+      deferred.resolve(response.data);
+      console.log("Got a successful response: " + JSON.stringify(response.data));
+    }, function errorCallback(response) {
+      deferred.reject();
+      console.log("Got an error. :((((((  ");
+    });
+    return deferred.promise;
+  };
+
+
+  $scope.refresh = function() {
+    $scope.getUsers()
+        .then(function (data) {
+          $scope.users = data;
+        })   
+    }
+    
+  $scope.refresh();
+
+
+  $scope.toBeDeletedUser = {};
+
+  $scope.deleteUser = function() {
+    var user = $scope.toBeDeletedUser.username;
+    var url_id = url_domain + users_path + back_slash + user;
+
+  	console.log("Trying to delete " + user);
+  	
   	$http({
   	  method: 'DELETE',
   	  url: url_id,
   	  headers: {
-  	  	'safedelete': 'yes'
+  	  	'safedelete': $scope.toBeDeletedUser.safekey
   	  }
   	}).then(function successCallback(response) {
   		console.log("Got a successful response");
-  	    // this callback will be called asynchronously
-  	    // when the response is available
   	}, function errorCallback(response) {
-  		console.log(" :-( ");
-  	    // called asynchronously if an error occurs
-  	    // or server returns response with an error status.
+  		console.log("Got an error. :-( ");
   	});
+    $scope.toBeDeletedUser.username = null;
+    $scope.toBeDeletedUser.safekey = null;
   };
 
 
@@ -32,42 +65,54 @@ angular.module('app.controllers', ['ionic'])
 
   $scope.addUser = function() {
     var url_id = url_domain + users_path;
+    var strength_file = "";
     console.log("Trying to add a user with a name: " + $scope.newUser.newName);
+
+    if ($scope.newUser.contact_type == "Gold") {
+      strength_file = "../img/strength-green.png";
+    } else if ($scope.newUser.contact_type == "Silver") {
+      strength_file = "../img/strength-yellow.png";
+    } else if ($scope.newUser.contact_type == "Bronze") {
+      strength_file = "../img/strength-red.png";
+    }
+    
 
     $http({
       method: 'POST',
       url: url_id,
       headers: {
+        'name': $scope.newUser.newName,
+        'email': $scope.newUser.email,
         'username': $scope.newUser.username,
-        'email': $scope.newUser.email
+        'contact_type': strength_file,
+        'phone_number': $scope.newUser.phone_number,
+        'profession': $scope.newUser.profession,
+        'location': $scope.newUser.location,
+        'photo': $scope.newUser.photo
       }
     }).then(function successCallback(response) {
       console.log("Got a successful response");
-        // this callback will be called asynchronously
-        // when the response is available
     }, function errorCallback(response) {
-      console.log(" :-( ");
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
+      console.log("Got an error. :-( ");
     });
+
+    $scope.connectionModule.hide();
+    $scope.newUser.username = null;
+    $scope.newUser.email = null;
+    $scope.newUser.newName = null;
+    $scope.newUser.contact_type = null;
+    $scope.newUser.phone_number = null;
+    $scope.newUser.profession = null;
+    $scope.newUser.location = null;
+    $scope.newUser.photo = null;
+
+    $scope.refresh();
   };
 
 
   /* Login Controller. */
   $scope.login = function() {
-/*
-    console.log("Params: " + $stateParams.username);
-    $scope.account = Account.get({ username: $stateParams.username }); 
-    console.log("Account: " + $scope.account + " LOGIN user: " + $scope.account.username + " - PW: " + $scope.account.password);
-    if ($scope.account) {
-      $state.go('tabs.home');
-    } else {
-      var alertPopup = $ionicPopup.alert({
-        title: 'Login failed!',
-        template: 'Please check your credentials!'
-      });
-    }
-*/
+
     if (typeof $scope.account === "undefined") {
       console.log("Account params are undefined.");
       //trigger pop up

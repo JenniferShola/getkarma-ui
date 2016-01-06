@@ -89,7 +89,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
     url: '/trends',
     views: {
       'tab4': {
-        templateUrl: 'templates/trends.html'
+        templateUrl: 'templates/trends.html',
+        controller: 'mainCtrl'
       }
     }
   })

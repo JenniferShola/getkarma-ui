@@ -13,8 +13,23 @@
                         IN PROGRESS
                     </p>
                 </a>
-            </div>
+                <label class="item item-input">
+                    <span class="input-label">USERNAME</span>
+                    <input type="text" placeholder="username" ng-model="toBeDeletedUser.username">
+                </label>
+                <label class="item item-input item-select sub-detail">
+                    <span class="input-label">SAFE DELETE</span>
+                    <select ng-model="toBeDeletedUser.safekey">
+                        <option selected>no</option>
+                        <option>yes</option>
+                    </select>
+                </label>
+                <button class="button button-clear button-positive sit-right" ng-click="deleteUser()">Submit</button>
+                <button class="button button-clear button-positive sit-right" ng-click="getUsers()">Get All Users</button>
 
+                
+
+            </div>
     	</ion-content>
 
 	</div>

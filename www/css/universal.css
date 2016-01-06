@@ -152,4 +152,7 @@ input.normalize {
     background-color: #4cd964 !important;
 }
 
-
+.sit-right {
+	float: right;
+    display: block;
+}

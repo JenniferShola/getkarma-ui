@@ -8,40 +8,10 @@
         
         <ion-content class="has-header" scroll="true" direction="y" >  
         	<div  class="">
-                <a class="item" ui-sref="profile">
-                    <img src="../img/sample-profile-photo4.jpg" class="contacts-connection-photo" />
-                    <img src="../img/strength-yellow.png" alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>Jamieson Obayemi</h1>
-                </a>
-                <a class="item" href="#">
-                    <img src="../img/sample-profile-photo7.jpg" class="contacts-connection-photo" />
-                    <img src="../img/strength-yellow.png" alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>Allison Kim</h1>
-                </a>
-                <a class="item" href="#">
-                    <img src="../img/sample-profile-photo16.jpg" class="contacts-connection-photo" />
-                    <img src="../img/strength-red.png" alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>Lesley Nathanson</h1>
-                </a>
-                <a class="item" href="#">
-                    <img src="../img/sample-profile-photo8.jpg" class="contacts-connection-photo" />
-                    <img src="../img/strength-green.png" alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>Will Roemily</h1>
-                </a>
-                <a class="item" href="#">
-                    <img src="../img/sample-profile-photo11.jpg" class="contacts-connection-photo" />
-                    <img src="../img/strength-red.png" alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>Sara Lee</h1>
-                </a>
-                <a class="item" href="#">
-                    <img src="../img/sample-profile-photo12.jpg" class="contacts-connection-photo" />
-                    <img src="../img/strength-green.png" alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>Colby Roe</h1>
-                </a>
-                <a class="item" href="#">
-                    <img src="../img/sample-profile-photo18.jpg" class="contacts-connection-photo" />
-                    <img src="../img/strength-green.png" alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>Lawrence Laihee</h1>
+                <a class="item" ui-sref="profile" ng-repeat="user in users">
+                    <img src={{user.photo}} class="contacts-connection-photo" />
+                    <img src={{user.contact_type}} alt="strength meter image" class="contacts-strength-meter"/>
+                    <h1>{{user.name}}</h1>
                 </a>
             </div>
     	</ion-content>

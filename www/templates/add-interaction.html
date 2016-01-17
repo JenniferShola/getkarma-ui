@@ -3,7 +3,7 @@
 
         <ion-header-bar class="clear">
             <button class="button button-icon icon ion-ios-close-empty" ng-click="closeAddInteractionModule()"></button>
-            <button class="button button-icon icon ion-ios-checkmark-empty"></button>
+            <button class="button button-icon icon ion-ios-checkmark-empty" ng-click="addInteraction()"></button>
         </ion-header-bar>
 
         <ion-content class="has-header" scroll="true" direction="y" >
@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <div class="add-interaction-main-profile-detail">
-                    <h2>Follow Up With Janeth</h2>
-                    <p class="">Enter description here. The text here should describe what you plan on discussing during the interaction. Filling out this section helps for future searches.</p>
+                    <h2><input type="text" class="text-like" placeholder="Follow Up With Janeth" ng-model="newInteraction.title"></h2>
+                    <p class=""><textarea rows="4" cols="35" class="text-like" ng-model="newInteraction.description" placeholder="Enter description here. The text here should describe what you plan on discussing during the interaction. Filling out this section helps for future searches."></textarea></p>
                 </div>
             </div>
 
@@ -36,18 +36,32 @@
             <div class="sub-content-detail ">
                 <div class="content-detail">
                     <label class="item item-input sub-detail">
+                        <span class="input-label">TO FIELD</span>
+                        <input type="text" ng-model="newInteraction.to_user_id">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
+                        <span class="input-label">FROM FIELD</span>
+                        <input type="text" ng-model="newInteraction.connection_id">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div>
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
                         <span class="input-label">DATE</span>
-                        <input type="date">
+                        <input type="date" ng-model="newInteraction.created_time">
                     </label>
                     <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
                 </div>
                 <div class="content-detail">
                     <label class="item item-input item-select sub-detail">
-                        <div class="input-label">LOCATION</div>
-                        <select>
+                        <div class="input-label">ACTION TIME</div>
+                        <select ng-model="newInteraction.action_time">
                             <option selected>20 Minutes</option>
                             <option >1 Day</option>
-                            <option>2 Day</option>
+                            <option>2 Days</option>
                         </select>
                     </label>
                     <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
@@ -55,7 +69,7 @@
                 <div class="content-detail">
                     <label class="item item-input item-select sub-detail">
                         <div class="input-label">ACTION</div>
-                        <select>
+                        <select ng-model="newInteraction.action">
                             <option selected>Email</option>
                             <option >Tweet</option>
                             <option >Text</option>
@@ -66,15 +80,22 @@
                 </div>
                 <div class="content-detail">
                     <label class="item item-input sub-detail">
+                        <span class="input-label">LOCATION</span>
+                        <input type="text" placeholder="San Francisco" ng-model="newInteraction.location">
+                    </label>
+                    <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
+                </div
+                <div class="content-detail">
+                    <label class="item item-input sub-detail">
                         <span class="input-label">TAGS</span>
-                        <input type="text" placeholder="GHC">
+                        <input type="text" placeholder="GHC" ng-model="newInteraction.tags">
                     </label>
                     <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
                 </div
                 <div class="content-detail">
                     <label class="item item-input sub-detail">
                         <span class="input-label">NOTES</span>
-                        <input type="text" placeholder="Some notes here...">
+                        <input type="text" placeholder="Some notes here..." ng-model="newInteraction.notes">
                     </label>
                     <img src="../img/full-line.png" alt="selected line image" class="subcontent-detail-line"/>
                 </div>            

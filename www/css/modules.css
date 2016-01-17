@@ -30,6 +30,12 @@
 	
 }
 
+.text-like {
+	outline: medium none;
+	background-color: transparent;
+	border: medium none;
+}
+
 #interaction-profile-pic {
 	border-radius: 100px;
  	-webkit-border-radius: 100px;
@@ -104,6 +110,14 @@
 
 .second-button-header {
 	margin-left: 5%;
+}
+
+textarea {
+    resize: none;
+}
+
+input.text-like {
+    text-align: -webkit-left !important;
 }
 
 .platform-ios input[type="datetime-local"], 

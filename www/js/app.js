@@ -131,7 +131,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngResource']
   })
 
 
-
 /*
   // setup an abstract state for the tabs directive
     .state('tab', {

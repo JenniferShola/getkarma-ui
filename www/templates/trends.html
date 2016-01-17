@@ -25,7 +25,12 @@
                     </select>
                 </label>
                 <button class="button button-clear button-positive sit-right" ng-click="deleteUser()">Submit</button>
-                <button class="button button-clear button-positive sit-right" ng-click="getUsers()">Get All Users</button>
+                <div ng-controller="contactsCtrl">
+                    <button class="button button-clear button-positive sit-right" ng-click="printUsers()">Print Users</button>
+                </div>
+                <div ng-controller="interactionsCtrl">
+                    <button class="button button-clear button-positive sit-right" ng-click="printInteractions()">Print Interactions</button>
+                </div>
 
                 
 

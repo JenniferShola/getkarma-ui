@@ -1,3 +1,4 @@
+
 <ion-view view-title="Contacts" class="contacts-view" can-swipe-back="false">
     <div class="row responsive-sm home-view-content-holder">
 
@@ -6,15 +7,17 @@
             <button class="button button-icon icon ion-ios-plus-empty" ng-click="openAddConnectionModule()"></button>
         </ion-header-bar>
         
-        <ion-content class="has-header" scroll="true" direction="y" >  
-        	<div  class="">
-                <a class="item" ui-sref="profile" ng-repeat="user in users">
-                    <img src={{user.photo}} class="contacts-connection-photo" />
-                    <img src={{user.contact_type}} alt="strength meter image" class="contacts-strength-meter"/>
-                    <h1>{{user.name}}</h1>
-                </a>
-            </div>
-    	</ion-content>
+        <div ng-controller="contactsCtrl">
+            <ion-content class="has-header" scroll="true" direction="y" >  
+            	<div  class="">
+                    <a class="item" ng-repeat="user in users" ng-click="showProfile({{user}}) ">
+                        <img src={{user.photo}} class="contacts-connection-photo" />
+                        <img src={{user.contact_type}} alt="strength meter image" class="contacts-strength-meter"/>
+                        <h1>{{user.name}}</h1>
+                    </a>
+                </div>
+        	</ion-content>
+        </div>
 
 	</div>
 </ion-view>

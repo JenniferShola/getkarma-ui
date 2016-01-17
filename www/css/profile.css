@@ -13,6 +13,7 @@
 }
 
 #full-connection-meter {
+	top: 13px;
 	position: absolute;
     z-index: 0;
 }
@@ -59,8 +60,6 @@
 }
 
 .line-item-icon-detail {
-	width: 20px;
-    height: 50px;
     float: left;
     margin: 3px 10px 0px 0px;
 }

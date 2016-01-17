@@ -24,6 +24,22 @@ angular.module('app.services', ['ngResource'])
   }
 })
 
+.factory('SharedData', function() {
+ var savedData = {}
+ function set(data) {
+   savedData = data;
+ }
+ function get() {
+  return savedData;
+ }
+
+ return {
+  set: set,
+  get: get
+ }
+
+})
+
 .factory('Account', function ($resource) {
   return $resource('http://getkarma.herokuapp.com/accounts/:account',{account: "@username"}, {
     update: {

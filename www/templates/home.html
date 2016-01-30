@@ -11,23 +11,34 @@
                 
             </div>
 
-            <div  class="home-task-list">
-                <a class="item item-avatard" href="#">
-                    <div class="colored-task"></div>
-                    <img src="../img/sample-profile-photo@1x.png" />
-                    <div class="item-home-details">
-                        <h2>Meeting with Janet</h2>
-                        <p class="detail-date">Jan 1</p><p class="detail-project">Starbucks</p>
-                    </div>
-                </a>
-                <a class="item item-avatard" href="#">
-                    <div class="colored-task"></div>
-                    <img src="../img/sample-profile-photo2.png" />
-                    <div class="item-home-details">
-                        <h2>Catch Up With Lydia</h2>
-                        <p class="detail-date">Feb 14</p><p class="detail-project">Mobile Project</p>
-                    </div>
-                </a>
+            <div ng-controller="tasksCtrl">
+                <div  class="home-task-list">
+                    <a class="item item-avatard" href="#" ng-repeat="task in tasks">
+                        <div class="colored-task"> <!--{{task.creator.contact_type}}--> </div>
+                        <img src={{task.creator.photo}} />
+                        <div class="item-home-details">
+                            <h2>{{task.title}}</h2>
+                            <p class="detail-date">Jan 1</p><p class="detail-project">{{task.location}}</p>
+                        </div>
+                    </a>
+
+                    <a class="item item-avatard" href="#">
+                        <div class="colored-task"></div>
+                        <img src="../img/sample-profile-photo@1x.png" />
+                        <div class="item-home-details">
+                            <h2>Meeting with Janet</h2>
+                            <p class="detail-date">Jan 1</p><p class="detail-project">Starbucks</p>
+                        </div>
+                    </a>
+                    <a class="item item-avatard" href="#">
+                        <div class="colored-task"></div>
+                        <img src="../img/sample-profile-photo2.png" />
+                        <div class="item-home-details">
+                            <h2>Catch Up With Lydia</h2>
+                            <p class="detail-date">Feb 14</p><p class="detail-project">Mobile Project</p>
+                        </div>
+                    </a>
+                </div>
             </div>
 
         </ion-content>

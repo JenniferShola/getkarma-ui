@@ -6,50 +6,70 @@
             <button class="button button-icon icon ion-ios-plus-empty" ng-click="openAddConnectionModule()"></button>
         </ion-header-bar>
         
-        <ion-content class="has-header" scroll="true" direction="y" >  
-        	<div  class="">
-                <div class="list card">
-                    <div class="item item-avatar">
-                        <img src="../img/sample-profile-photo19.jpg">
-                        <h2 class="item-name-details">Janethe Corinee</h2>
-                        <p class="item-date-details">16hrs  *  https://stripe.com/blog/open-source-retreat-2016</p>
+        <div ng-controller="interactionsCtrl">
+            <ion-content class="has-header" scroll="true" direction="y" >  
+            	<div  class="">
+
+                    <div class="list card" ng-repeat="moment in moments">
+                        <div class="item item-avatar">
+                            <img src={{moment._creator.photo}} >
+                            <h2 class="item-name-details">{{moment._creator.name}}</h2>
+                            <p class="item-date-details">16hrs  *  {{moment.source}}</p>
+                        </div>
+
+                        <div class="item item-body">
+                            <!-- if moment has a photo -->
+                            <img class="full-image" src={{moment.photo}}>
+                            <!-- if moment has a description -->
+                            <p>
+                              {{moment.description}} 
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="item item-body">
-                        <img class="full-image" src="../img/hands-people-woman-working.jpg">
-                        <p>
-                          Stripe is hosting another Open Source Retreat from January to April 2016. We'll be giving 3-month grants to 3-4 developers to work on an open source project full-time from the Stripe office. Last year, our grantees made significant progress on their projects in a relatively short time—from launching a pure-Python TLS 1.2 to releasing a major update to urllib3. 
-                        </p>
+                    <div class="list card">
+                        <div class="item item-avatar">
+                            <img src="../img/sample-profile-photo19.jpg">
+                            <h2 class="item-name-details">Janethe Corinee</h2>
+                            <p class="item-date-details">16hrs  *  https://stripe.com/blog/open-source-retreat-2016</p>
+                        </div>
+
+                        <div class="item item-body">
+                            <img class="full-image" src="../img/hands-people-woman-working.jpg">
+                            <p>
+                              Stripe is hosting another Open Source Retreat from January to April 2016. We'll be giving 3-month grants to 3-4 developers to work on an open source project full-time from the Stripe office. Last year, our grantees made significant progress on their projects in a relatively short time—from launching a pure-Python TLS 1.2 to releasing a major update to urllib3. 
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="list card">
+                        <div class="item item-avatar">
+                            <img src="../img/sample-profile-photo15.jpg">
+                            <h2 class="item-name-details">Marty McFly</h2>
+                            <p class="item-date-details">8 days  *  Eventbrite Invite - Tech Talk at Lyft: Asynchronous…</p>
+                        </div>
+
+                        <div class="item item-body">
+                            <p>
+                              Hey, join us at Lyft HQ for a Tech Talk at Lyft. It will be  featuring Dwayne Reeves, Software Engineer on Facebook's Hack Team. Hack is a language that evolved from PHP. This evolution includes first class support for async functions, static type checking, null tracking, and several other improvements and features. We will dive into the motivation behind Hack and how the language makes your job as a developer easier...
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="list card">
+                        <div class="item item-avatar">
+                            <img src="../img/sample-profile-photo13.jpg">
+                            <h2 class="item-name-details">Jason Walker</h2>
+                            <p class="item-date-details">3 days  *  Eventbrite Invite - Level the Coding Field 2015</p>
+                        </div>
+
+                        <div class="item item-body">
+                            <img class="full-image" src="../img/hackathon@2x.png">
+                        </div>
                     </div>
                 </div>
-
-                <div class="list card">
-                    <div class="item item-avatar">
-                        <img src="../img/sample-profile-photo15.jpg">
-                        <h2 class="item-name-details">Marty McFly</h2>
-                        <p class="item-date-details">8 days  *  Eventbrite Invite - Tech Talk at Lyft: Asynchronous…</p>
-                    </div>
-
-                    <div class="item item-body">
-                        <p>
-                          Hey, join us at Lyft HQ for a Tech Talk at Lyft. It will be  featuring Dwayne Reeves, Software Engineer on Facebook's Hack Team. Hack is a language that evolved from PHP. This evolution includes first class support for async functions, static type checking, null tracking, and several other improvements and features. We will dive into the motivation behind Hack and how the language makes your job as a developer easier...
-                        </p>
-                    </div>
-                </div>
-
-                <div class="list card">
-                    <div class="item item-avatar">
-                        <img src="../img/sample-profile-photo13.jpg">
-                        <h2 class="item-name-details">Jason Walker</h2>
-                        <p class="item-date-details">3 days  *  Eventbrite Invite - Level the Coding Field 2015</p>
-                    </div>
-
-                    <div class="item item-body">
-                        <img class="full-image" src="../img/hackathon@2x.png">
-                    </div>
-                </div>
-            </div>
-    	</ion-content>
+        	</ion-content>
+        </div>
 
 	</div>
 </ion-view>

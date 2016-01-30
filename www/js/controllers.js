@@ -24,18 +24,21 @@ angular.module('app.controllers', ['ionic'])
   $scope.login = function() {
 
     if (typeof $scope.account === "undefined") {
-      console.log("Account params are undefined.");
-      //trigger pop up
-    } else {
-      console.log("Account: " + $scope.account + " LOGIN user: " + $scope.account.username + " - PW: " + $scope.account.password);
-      LoginService.loginUser($scope.account.username, $scope.account.password).success(function(account) {
-        $state.go('tabs.home');
-      }).error(function(account) {
-        var alertPopup = $ionicPopup.alert({
-          title: 'Login failed!',
-          template: 'Please check your credentials!'
-        });
+      $ionicPopup.alert({
+        title: 'Login failed!',
+        template: 'Please check your credentials!'
       });
+    } else {
+      LoginService.loginUser($scope.account.username, $scope.account.password)
+        .success(function(account) {
+          $state.go('tabs.home');
+        })
+        .error(function(account) {
+          $ionicPopup.alert({
+            title: 'Login failed!',
+            template: 'Please check your credentials!'
+          });
+        });
     }
   };
 
@@ -78,28 +81,127 @@ angular.module('app.controllers', ['ionic'])
 
 })
 
-/*********************************************** Interaction Code. ***********************************************/
-.controller('interactionsCtrl', function($scope, $q, $ionicModal, $ionicPopup, $state, $stateParams, $http) {
-  var url_domain = 'http://localhost:3000/';
-  var interactions_path = 'interactions';
+
+
+
+
+
+
+
+/*********************************************** Task Code. ***********************************************/
+
+.controller('tasksCtrl', function($scope, $q, $ionicModal, $ionicPopup, $state, $stateParams, $http) {
+  var tasks_path = 'http://localhost:3000/tasks/';
+  var detailed_path = 'detailed/';
+  var user_path = 'user/';
   var back_slash = '/';
 
-  $scope.interactions = [];
-  $scope.interactionsByUser = [];
+  $scope.tasks = [];
 
-  $scope.getByParamInteractions = function() {
-    var url_id = url_domain + interactions_path;
+  $scope.getTasks = function() {
+    var custom_url = tasks_path + user_path + '567ef4d85d9c991537da3dc3' + back_slash + detailed_path;
     var deferred = $q.defer();
 
-    console.log("Trying to get interactions. ");
+    console.log("Trying to get tasks. ");
     
     $http({
       method: 'GET',
-      url: url_id,
-      params: {user_id: 'saralee'}
+      url: custom_url
     }).then(function successCallback(response) {
       deferred.resolve(response.data);
-      //console.log("Got a successful response: " + JSON.stringify(response.data));
+      console.log("Got a successful response! ");
+    }, function errorCallback(response) {
+      deferred.reject();
+      console.log("Got an error. :((((((  ");
+    });
+    return deferred.promise;
+  }
+
+  $scope.task_refresh = function() {
+    $scope.getTasks()
+        .then(function (data) {
+          $scope.tasks = data;
+        })   
+  }
+
+  $scope.task_refresh();
+
+
+
+  $scope.newTask = {};
+
+  $scope.addTask = function() {
+    console.log("Trying to add a task with a title: " + $scope.newTask.title);
+
+    var action_constants = ["Email", "Tweet", "Text", "Call"];
+    var at_constants = ["20 Minutes", "1 Day", "2 Days"];
+
+    $http({
+      method: 'POST',
+      url: tasks_path,
+      headers: {
+        'to_user_id': $scope.newTask.to_user_id,
+        'connection_id': $scope.newTask.connection_id,
+        'title': $scope.newTask.title,
+        'action': action_constants.indexOf($scope.newTask.action),
+        'action_time': at_constants.indexOf($scope.newTask.action_time),
+        'location': $scope.newTask.location,
+        'notes': $scope.newTask.notes
+      }
+    }).then(function successCallback(response) {
+      console.log("Got a successful response");
+    }, function errorCallback(response) {
+      console.log("Got an error. :-( ");
+    });
+
+    //$scope.taskModal.hide();
+    $scope.newTask.to_user_id = null;
+    $scope.newTask.connection_id = null;
+    $scope.newTask.title = null;
+    $scope.newTask.action = null;
+    $scope.newTask.action_time = null;
+    $scope.newTask.location = null;
+    $scope.newTask.notes = null;
+
+    $scope.task_refresh();
+  };
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************** Interaction Code. ***********************************************/
+
+.controller('interactionsCtrl', function($scope, $q, $ionicModal, $ionicPopup, $state, $stateParams, $http) {
+  var interactions_path = 'http://localhost:3000/interactions/';
+  var detailed_path = 'detailed/';
+  var user_path = 'user/';
+  var back_slash = '/';
+
+  $scope.moments = [];
+  $scope.interactions = [];
+
+  $scope.getMoments = function() {
+    var custom_url = interactions_path + user_path + '567ef4d85d9c991537da3dc3' + back_slash + detailed_path;
+    var deferred = $q.defer();
+
+    console.log("Trying to get moments. ");
+    
+    $http({
+      method: 'GET',
+      url: custom_url
+    }).then(function successCallback(response) {
+      deferred.resolve(response.data);
       console.log("Got a successful response! ");
     }, function errorCallback(response) {
       deferred.reject();
@@ -109,14 +211,13 @@ angular.module('app.controllers', ['ionic'])
   }
 
   $scope.getInteractions = function() {
-     var url_id = url_domain + interactions_path;
     var deferred = $q.defer();
 
     console.log("Trying to get interactions. ");
     
     $http({
       method: 'GET',
-      url: url_id,
+      url: interactions_path,
     }).then(function successCallback(response) {
       deferred.resolve(response.data);
       //console.log("Got a successful response: " + JSON.stringify(response.data));
@@ -133,17 +234,18 @@ angular.module('app.controllers', ['ionic'])
     console.log(printable);
   }
 
-
-  $scope.newInteraction = {};
-
   $scope.int_refresh = function() {
-    $scope.getInteractions()
+    $scope.getMoments()
         .then(function (data) {
-          $scope.interactions = data;
+          $scope.moments = data;
         })   
   }
 
   $scope.int_refresh();
+
+
+
+  $scope.newInteraction = {};
 
   $scope.addInteraction = function() {
     var url_id = url_domain + interactions_path;
@@ -188,7 +290,20 @@ angular.module('app.controllers', ['ionic'])
 
 })
 
-  /*********************************************** Users Code. ***********************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************** Users Code. ***********************************************/
+
 .controller('contactsCtrl', function($scope, $q, $ionicModal, LoginService, User, Account, $ionicPopup, $state, $stateParams, $http) {
   var url_domain = 'http://localhost:3000/';
   var users_path = 'users';

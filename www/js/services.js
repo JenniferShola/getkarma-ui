@@ -1,16 +1,27 @@
 angular.module('app.services', ['ngResource'])
 
-.service('LoginService', function($q) {
+.service('LoginService', function($q, $http) {
+  var accounts_path = 'http://localhost:3000/accounts/authenticate';
+
   return {
     loginUser: function(name, pw) {
+
       var deferred = $q.defer();
       var promise = deferred.promise;
 
-      if (name == 'user' && pw == 'secret') {
-        deferred.resolve('Welcome ' + name + '!');
-      } else {
-        deferred.reject('Wrong credentials.');
-      }
+      $http({
+        method: 'POST',
+        url: accounts_path,
+        body: {
+            username: name,
+            password: pw
+        }
+      }).then(function successCallback(response) {
+        deferred.resolve(response.data);
+      }, function errorCallback(response) {
+        deferred.reject();
+      });
+
       promise.success = function(fn) {
         promise.then(fn);
         return promise;

@@ -1,12 +1,12 @@
 # Karma UI
 
-Max's Notes
+## How to Run UI:
+1. Install Ionic Command Line Tools `npm install -g cordova ionic`
+2. Start Project `ionic serve`
 
-How to Run UI:
-	1) in terminal, enter command: `ionic serve`
-		//opens UI in chrome
-	2) view in Developer Tools' console
-	3) set device to mobile, Apple 5 for now
-	4) login info:
-		a) username: user
-		b) pw: secret
+## Open UI In Chrome:
+1. View in Developer Tools' Console
+2. Set Device to mobile (Iphone 5 for now)
+3. Login Info
+  1. username: user
+  2. pw: secret
